@@ -1,0 +1,12 @@
+.container {
+  @apply px-4 lg:px-28 py-8;
+}
+
+.content {
+  @apply flex justify-between items-center;
+}
+
+.connect_wallet {
+  @apply rounded-3xl bg-transparent border-2 border-[#58310F] px-10 py-2 uppercase;
+  @apply font-comfortaa_bold;
+}

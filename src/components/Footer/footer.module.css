@@ -1,0 +1,12 @@
+.container {
+    margin-top: auto;
+    @apply py-4;
+}
+
+.content {
+    @apply flex flex-col items-center;
+}
+
+.socials {
+    @apply flex gap-4 items-center;
+}

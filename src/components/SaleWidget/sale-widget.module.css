@@ -1,0 +1,45 @@
+.container {
+  @apply border-2 border-[#58310F] w-full sm:max-w-xl;
+}
+
+.content {
+  @apply flex flex-col items-center;
+}
+
+.content__header {
+  @apply py-4 flex justify-center w-full;
+}
+
+.content__body {
+  @apply w-full flex flex-col gap-2;
+}
+
+.sale__form {
+  @apply flex flex-col gap-2;
+  @apply mx-6 px-4 py-2 border-2 border-[#58310F];
+}
+
+.form_input {
+  @apply rounded-l-3xl h-full px-4 w-full;
+  @apply border-l-4 border-y-4 border-[#cd9046];
+  @apply font-comfortaa_bold;
+  outline: none;
+}
+
+.max_btn {
+  @apply px-4 h-full rounded-r-3xl font-comfortaa_bold;
+  background: linear-gradient(90deg, #cd9046 0%, #58310f 100%);
+}
+
+.form_action {
+  @apply flex justify-center;
+}
+
+.form_action button {
+  @apply rounded-xl py-2 uppercase w-64 uppercase font-comfortaa_bold;
+  background: linear-gradient(90deg, #cd9046 0%, #58310f 100%);
+}
+
+.content__footer {
+    @apply flex flex-col items-center py-2; 
+}
