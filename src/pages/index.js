@@ -1,6 +1,7 @@
 import SaleWidget from "@/components/SaleWidget";
 
 export default function Home() {
+
   return (
     <>
       <h1 className="font-comfortaa_reg text-5xl uppercase pb-2">Presale</h1>

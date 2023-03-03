@@ -21,13 +21,13 @@
 
 .form_input {
   @apply rounded-l-3xl h-full px-4 w-full;
-  @apply border-l-4 border-y-4 border-[#cd9046];
+  @apply border-l-[6px] border-y-[6px] border-[#cd9046];
   @apply font-comfortaa_bold;
   outline: none;
 }
 
 .max_btn {
-  @apply px-4 h-full rounded-r-3xl font-comfortaa_bold;
+  @apply px-4 h-full rounded-r-3xl font-comfortaa_bold text-white;
   background: linear-gradient(90deg, #cd9046 0%, #58310f 100%);
 }
 
@@ -36,8 +36,12 @@
 }
 
 .form_action button {
-  @apply rounded-xl py-2 uppercase w-64 uppercase font-comfortaa_bold;
-  background: linear-gradient(90deg, #cd9046 0%, #58310f 100%);
+  @apply rounded-xl py-2 uppercase px-8 uppercase font-comfortaa_bold text-white;
+  background: #58310f;
+}
+
+.form_action button[disabled]{
+  @apply opacity-60;
 }
 
 .content__footer {
