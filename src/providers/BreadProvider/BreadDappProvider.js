@@ -1,4 +1,4 @@
-import { useEthers, ChainId, Mainnet, useUpdateConfig } from "@usedapp/core";
+import { useEthers, ChainId, useUpdateConfig, Arbitrum } from "@usedapp/core";
 import React, { useEffect, useState } from "react";
 import BreadDappContext from "./context";
 
@@ -7,46 +7,46 @@ function BreadDappProvider({ children }) {
   const updateConfig = useUpdateConfig();
   const [isChainError, setIsChainError] = useState(false);
 
-  // useEffect(() => {
-  //   try {
-  //     if (account != undefined && library != undefined) {
-  //       updateConfig({ readOnlyUrls: { [ChainId.Mainnet]: library } });
-  //     } else {
-  //       updateConfig({
-  //         readOnlyUrls: {
-  //           [ChainId.Mainnet]: process.env.NEXT_PUBLIC_MAINNET_RPC_URL,
-  //         },
-  //       });
-  //     }
-  //   } catch (e) {
-  //     console.error("Provider switch failed. Going back to alchemy: ", e);
-  //     updateConfig({
-  //       readOnlyUrls: {
-  //         [ChainId.Mainnet]: process.env.NEXT_PUBLIC_MAINNET_RPC_URL,
-  //       },
-  //     });
-  //   }
-  // }, [account]);
+  useEffect(() => {
+    try {
+      if (account != undefined && library != undefined) {
+        updateConfig({ readOnlyUrls: { [ChainId.Arbitrum]: library } });
+      } else {
+        updateConfig({
+          readOnlyUrls: {
+            [ChainId.Arbitrum]: process.env.NEXT_PUBLIC_ARBITRUM_RPC_URL,
+          },
+        });
+      }
+    } catch (e) {
+      console.error("Provider switch failed. Going back to alchemy: ", e);
+      updateConfig({
+        readOnlyUrls: {
+          [ChainId.Arbitrum]: process.env.NEXT_PUBLIC_ARBITRUM_RPC_URL,
+        },
+      });
+    }
+  }, [account]);
 
-  // useEffect(() => {
-  //   if (account != undefined && chainId != undefined) {
-  //     if (chainId != Mainnet.chainId) {
-  //       setIsChainError(true);
-  //       updateConfig({
-  //         readOnlyUrls: {
-  //           [ChainId.Mainnet]: process.env.NEXT_PUBLIC_MAINNET_RPC_URL,
-  //         },
-  //       });
-  //     } else {
-  //       setIsChainError(false);
-  //       updateConfig({
-  //         readOnlyUrls: {
-  //           [ChainId.Mainnet]: library,
-  //         },
-  //       });
-  //     }
-  //   }
-  // }, [account, chainId]);
+  useEffect(() => {
+    if (account != undefined && chainId != undefined) {
+      if (chainId != Arbitrum.chainId) {
+        setIsChainError(true);
+        updateConfig({
+          readOnlyUrls: {
+            [ChainId.Arbitrum]: process.env.NEXT_PUBLIC_ARBITRUM_RPC_URL,
+          },
+        });
+      } else {
+        setIsChainError(false);
+        updateConfig({
+          readOnlyUrls: {
+            [ChainId.Arbitrum]: library,
+          },
+        });
+      }
+    }
+  }, [account, chainId]);
 
   useEffect(() => {
     if (isChainError && account == undefined) {

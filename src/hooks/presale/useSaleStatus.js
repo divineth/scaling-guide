@@ -1,4 +1,4 @@
-import { Localhost, useCall } from "@usedapp/core";
+import { Arbitrum, useCall } from "@usedapp/core";
 import { usePresaleContract } from "../useContract";
 
 export const useSaleStatus = () => {
@@ -11,7 +11,7 @@ export const useSaleStatus = () => {
         method: "saleActive",
         args: [],
       },
-      { refresh: "never", chainId: Localhost.chainId, isStatic: true }
+      { refresh: "never", chainId: Arbitrum.chainId, isStatic: true }
     ) ?? {};
 
   if (error) {

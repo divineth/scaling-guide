@@ -6,7 +6,7 @@ import { useTotalCommitted } from "@/hooks/presale/useTotalCommited";
 import { utils } from "ethers";
 import ArrowUp from "@/assets/images/arrow-up.svg";
 import ArrowDown from "@/assets/images/arrow-down.svg";
-import { Localhost, useEtherBalance, useEthers } from "@usedapp/core";
+import { Arbitrum, useEtherBalance, useEthers } from "@usedapp/core";
 import { onInputNumberChange, parseDecimals } from "@/utils/utils";
 import { useBuyPresale } from "@/hooks/presale/useBuyPresale";
 import { useUserContribution } from "@/hooks/presale/useUserContribution";
@@ -24,7 +24,7 @@ function SaleWidget() {
   const saleStatus = useSaleStatus();
   const { send, state } = useBuyPresale();
   const { account } = useEthers();
-  const ethBalance = useEtherBalance(account, { chainId: Localhost.chainId });
+  const ethBalance = useEtherBalance(account, { chainId: Arbitrum.chainId });
   const userContribution = useUserContribution(account);
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);

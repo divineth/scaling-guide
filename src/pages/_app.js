@@ -4,35 +4,30 @@ import {
   Arbitrum,
   CoinbaseWalletConnector,
   DAppProvider,
-  Localhost,
-  Mainnet,
   MetamaskConnector,
 } from "@usedapp/core";
 import { WalletConnectConnector } from "@usedapp/wallet-connect-connector";
 import { BreadDappProvider } from "@/providers/BreadProvider/BreadDappProvider";
 
 const config = {
-  readOnlyChainId: Localhost.chainId,
+  readOnlyChainId: Arbitrum.chainId,
   readOnlyUrls: {
-    [Localhost.chainId]: process.env.NEXT_PUBLIC_LOCALHOST_RPC_URL,
+    [Arbitrum.chainId]: process.env.NEXT_PUBLIC_ARBITRUM_RPC_URL,
   },
   connectors: {
     metamask: new MetamaskConnector(),
     coinbase: new CoinbaseWalletConnector(),
     walletConnect: new WalletConnectConnector({
-      chainId: Mainnet.chainId,
+      chainId: Arbitrum.chainId,
       rpc: {
-        [Mainnet.chainId]: process.env.NEXT_PUBLIC_MAINNET_RPC_URL,
+        [Arbitrum.chainId]: process.env.NEXT_PUBLIC_ARBITRUM_RPC_URL,
       },
     }),
   },
-  // multicallVersion: 2,
-  // multicallAddresses: {
-  //   [Mainnet.chainId]: "0x5ba1e12693dc8f9c48aad8770482f4739beed696",
-  // },
-  // gasLimitBufferPercentage: 20,
+  multicallVersion: 2,
+  gasLimitBufferPercentage: 20,
   autoConnect: true,
-  // networks: [Mainnet],
+  networks: [Arbitrum],
   noMetamaskDeactivate: true,
 };
 
