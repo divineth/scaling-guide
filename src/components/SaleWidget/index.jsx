@@ -16,6 +16,7 @@ import { useSaleStatus } from "@/hooks/presale/useSaleStatus";
 import WalletManager from "../WalletManager";
 import { useBreadDapp } from "@/providers/BreadProvider/BreadDappProvider";
 import { compareNonTokenWithToken } from "@/utils/utils";
+import { useRouter } from "next/router";
 
 function SaleWidget() {
   const [showDetails, setShowDetails] = useState(false);
@@ -29,6 +30,8 @@ function SaleWidget() {
   const userContribution = useUserContribution(account);
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const router = useRouter();
 
   function closeModal() {
     setIsDialogOpen(false);
@@ -46,6 +49,7 @@ function SaleWidget() {
       alert("Your purchase was successful");
       setIsPendingTx(false);
       setAmount("");
+      router.reload();
     } else if (
       isPendingTx &&
       (state.status == "Fail" || state.status == "Exception")
