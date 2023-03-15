@@ -78,7 +78,6 @@ function SaleWidget() {
         ? `${parseDecimals(utils.formatEther(totalCommitted), 2)} ETH`
         : "0 ETH",
     },
-    { title: "Funds to Raise", value: "100 ETH" },
     { title: "Min per User", value: "0.5 ETH" },
     { title: "Max per User", value: "5 ETH" },
   ];
@@ -148,9 +147,12 @@ function SaleWidget() {
                 Sale Closed!
               </h3>
             )}
+            <h3 className="text-center font-comfortaa_reg text-2xl my-2">
+              Coming Soon
+            </h3>
             <div className={style.sale__form}>
               <div className="flex justify-between font-inter_reg text-lg">
-                <h4>Balance:</h4>
+                <h4>Available Balance:</h4>
                 <p>{`${
                   ethBalance
                     ? parseDecimals(utils.formatEther(ethBalance), 2)
@@ -165,6 +167,7 @@ function SaleWidget() {
                     onInputNumberChange(e, handleAmountChange);
                   }}
                   className={style.form_input}
+                  placeholder="0.00"
                 />
                 <button className={style.max_btn} onClick={setMaxAmount}>
                   MAX
@@ -232,7 +235,15 @@ function SaleWidget() {
             {showDetails && (
               <p className="text-center font-inter_reg text-md px-2">
                 Freshly baked goodness! <br /> Join the freshest bread bakery in
-                all of DeFi.
+                all of DeFi. <br /> Read our docs{" "}
+                <a
+                  href="https://docs.breadarb.finance"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="underline"
+                >
+                  here
+                </a>
               </p>
             )}
           </div>

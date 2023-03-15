@@ -1,6 +1,7 @@
 import style from "./footer.module.css";
 import DiscordIcon from "@/assets/images/discord.svg";
 import TwitterIcon from "@/assets/images/twitter.svg";
+import GitbookIcon from "@/assets/images/gitbook.svg";
 
 function Footer() {
   const socialLinks = [
@@ -11,7 +12,11 @@ function Footer() {
     {
       icon: DiscordIcon.src,
       url: "https://discord.gg/dCXJXYuAue",
-    }
+    },
+    {
+      icon: GitbookIcon.src,
+      url: "https://docs.breadarb.finance",
+    },
   ];
 
   return (

@@ -22,7 +22,7 @@ function NavBar() {
       <div className={style.container}>
         <div className={style.content}>
           <div className={style.nav__left}>
-            <img src={BreadLogo.src} alt="bread-logo" className="w-32" />
+            <a href="https://app.breadarb.finance"><img src={BreadLogo.src} alt="bread-logo" className="w-32" /></a>
           </div>
           <div className={style.nav__right}>
             <button className={`${style.connect_wallet} ${isChainError && "text-red-600 font-bold"}`} onClick={openModal}>
