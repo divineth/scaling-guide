@@ -15,6 +15,7 @@ import Countdown, { zeroPad } from "react-countdown";
 import { useSaleStatus } from "@/hooks/presale/useSaleStatus";
 import WalletManager from "../WalletManager";
 import { useBreadDapp } from "@/providers/BreadProvider/BreadDappProvider";
+import { compareNonTokenWithToken } from "@/utils/utils";
 
 function SaleWidget() {
   const [showDetails, setShowDetails] = useState(false);
@@ -105,7 +106,11 @@ function SaleWidget() {
   };
 
   const errorMessage =
-    parseFloat(amount) > 5 ? "Enter an amount less than 5 ETH" : "";
+    parseFloat(amount) > 5
+      ? "Enter an amount less than 5 ETH"
+      : compareNonTokenWithToken(ethBalance, amount, 18) == -1
+      ? "Insufficient Balance"
+      : "";
 
   const allInfoSubmitted = errorMessage == "";
 
@@ -131,13 +136,7 @@ function SaleWidget() {
             />
             {saleStatus && (
               <h3 className="text-center font-comfortaa_reg text-2xl my-2">
-                LIVE NOW! ENDS IN{" "}
-                <Countdown
-                  date={endDate}
-                  autoStart={true}
-                  key={endDate}
-                  renderer={renderer}
-                />
+                LIVE NOW!
               </h3>
             )}
             {saleStatus != undefined && !saleStatus && (
@@ -229,7 +228,7 @@ function SaleWidget() {
             {showDetails && (
               <p className="text-center font-inter_reg text-md px-2">
                 Freshly baked goodness! <br /> Join the freshest bread bakery in
-                all of Arbitrum Land.
+                all of DeFi.
               </p>
             )}
           </div>

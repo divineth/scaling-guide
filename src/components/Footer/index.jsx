@@ -1,17 +1,17 @@
 import style from "./footer.module.css";
-import TelegramIcon from "@/assets/images/telegram.svg";
+import DiscordIcon from "@/assets/images/discord.svg";
 import TwitterIcon from "@/assets/images/twitter.svg";
 
 function Footer() {
   const socialLinks = [
     {
-      icon: TelegramIcon.src,
-      url: "/#",
+      icon: TwitterIcon.src,
+      url: "https://twitter.com/breadarbitrum?s=21&t=gwoZTRmCgTScJO00keJAMA",
     },
     {
-      icon: TwitterIcon.src,
-      url: "/#",
-    },
+      icon: DiscordIcon.src,
+      url: "https://discord.gg/dCXJXYuAue",
+    }
   ];
 
   return (
@@ -25,11 +25,11 @@ function Footer() {
               target="_blank"
               rel="noreferrer noopener"
             >
-              <img src={item.icon} alt="" className="w-10" />
+              <img src={item.icon} alt="" className="w-8" />
             </a>
           ))}
         </div>
-        <p className="font-inter_reg">&copy;2023 Bread. All rights reserved.</p>
+        <p className="font-inter_reg font-bold">&copy;2023 Bread. All rights reserved.</p>
       </div>
     </div>
   );
