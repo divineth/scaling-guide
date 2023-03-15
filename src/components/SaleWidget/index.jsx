@@ -75,7 +75,7 @@ function SaleWidget() {
         : "0 ETH",
     },
     { title: "Funds to Raise", value: "100 ETH" },
-    { title: "Min per User", value: "1 ETH" },
+    { title: "Min per User", value: "0.5 ETH" },
     { title: "Max per User", value: "5 ETH" },
   ];
 
