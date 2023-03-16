@@ -107,8 +107,8 @@ function SaleWidget() {
   };
 
   const errorMessage =
-    parseFloat(amount) > 5
-      ? "Enter an amount less than 5 ETH"
+    parseFloat(amount) > 1
+      ? "Enter an amount less than 1 ETH"
       : compareNonTokenWithToken(ethBalance, amount, 18) == -1
       ? "Insufficient Balance"
       : "";
