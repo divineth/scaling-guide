@@ -79,10 +79,12 @@ function SaleWidget() {
         ? `${parseDecimals(utils.formatEther(totalCommitted), 2)} ETH`
         : "0 ETH",
     },
-    { title: "Max per User", value: "1.0 ETH" }
+    { title: "Max per User", value: "1.0 ETH" },
   ];
 
-  const barPercentage = 0;
+  const barPercentage = totalCommitted
+    ? utils.formatEther(totalCommitted) / 100
+    : 0;
 
   const handleAmountChange = (value) => {
     setAmount(value);
