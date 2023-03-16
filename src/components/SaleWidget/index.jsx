@@ -82,9 +82,7 @@ function SaleWidget() {
     { title: "Max per User", value: "5 ETH" },
   ];
 
-  const barPercentage = totalCommitted
-    ? utils.formatEther(totalCommitted) / 100
-    : 0;
+  const barPercentage = 0;
 
   const handleAmountChange = (value) => {
     setAmount(value);
