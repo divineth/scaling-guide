@@ -41,7 +41,7 @@ function SaleWidget() {
     setIsDialogOpen(true);
   }
 
-  const endDate = 1678060800000;
+  const endDate = 1679090400000;
   const { isChainError } = useBreadDapp();
 
   useEffect(() => {
@@ -117,10 +117,11 @@ function SaleWidget() {
 
   const allInfoSubmitted = errorMessage == "";
 
-  const renderer = ({ days, hours, minutes }) => {
+  const renderer = ({ days, hours, minutes, seconds }) => {
     return (
       <>
-        {zeroPad(days)}D {zeroPad(hours)}H {zeroPad(minutes)}M
+        {zeroPad(days)}D {zeroPad(hours)}H {zeroPad(minutes)}M{" "}
+        {zeroPad(seconds)}S
       </>
     );
   };
@@ -137,16 +138,22 @@ function SaleWidget() {
               width={100}
               percent={barPercentage < 1 ? barPercentage : 1}
             />
-            {saleStatus && (
+            {/* {saleStatus && (
               <h3 className="text-center font-comfortaa_reg text-2xl my-2">
-                LIVE NOW!
+                LIVE NOW!<br/>
+                <Countdown
+                  date={endDate}
+                  autoStart={true}
+                  key={endDate}
+                  renderer={renderer}
+                />
               </h3>
             )}
             {saleStatus != undefined && !saleStatus && (
               <h3 className="text-center font-comfortaa_reg text-2xl my-2">
                 Sale Closed!
               </h3>
-            )}
+            )} */}
             <h3 className="text-center font-comfortaa_reg text-2xl my-2">
               Coming Soon
             </h3>
