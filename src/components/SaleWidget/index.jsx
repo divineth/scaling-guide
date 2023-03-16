@@ -153,7 +153,7 @@ function SaleWidget() {
               </h3>
             )} */}
             <h3 className="text-center font-comfortaa_reg text-2xl my-2">
-              Coming Soon
+              LIVE NOW!
             </h3>
             <div className={style.sale__form}>
               <div className="flex justify-between font-inter_reg text-lg">
