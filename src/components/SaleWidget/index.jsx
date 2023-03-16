@@ -72,14 +72,14 @@ function SaleWidget() {
         ? `${parseDecimals(utils.formatEther(userContribution), 2)} ETH`
         : "0 ETH",
     },
+    { title: "Hard Cap", value: "50 ETH" },
     {
       title: "Total Committed",
       value: totalCommitted
         ? `${parseDecimals(utils.formatEther(totalCommitted), 2)} ETH`
         : "0 ETH",
     },
-    { title: "Min per User", value: "0.5 ETH" },
-    { title: "Max per User", value: "5 ETH" },
+    { title: "Max per User", value: "1 ETH" }
   ];
 
   const barPercentage = 0;
