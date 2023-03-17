@@ -83,7 +83,7 @@ function SaleWidget() {
   ];
 
   const barPercentage = totalCommitted
-    ? utils.formatEther(totalCommitted) / 100
+    ? utils.formatEther(totalCommitted) / 50
     : 0;
 
   const handleAmountChange = (value) => {
