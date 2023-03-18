@@ -138,25 +138,19 @@ function SaleWidget() {
               width={100}
               percent={barPercentage < 1 ? barPercentage : 1}
             />
-            {/* {saleStatus && (
+            {saleStatus && (
               <h3 className="text-center font-comfortaa_reg text-2xl my-2">
-                LIVE NOW!<br/>
-                <Countdown
-                  date={endDate}
-                  autoStart={true}
-                  key={endDate}
-                  renderer={renderer}
-                />
+                LIVE NOW!
               </h3>
             )}
             {saleStatus != undefined && !saleStatus && (
               <h3 className="text-center font-comfortaa_reg text-2xl my-2">
                 Sale Closed!
               </h3>
-            )} */}
-            <h3 className="text-center font-comfortaa_reg text-2xl my-2">
+            )}
+            {/* <h3 className="text-center font-comfortaa_reg text-2xl my-2">
               LIVE NOW!
-            </h3>
+            </h3> */}
             <div className={style.sale__form}>
               <div className="flex justify-between font-inter_reg text-lg">
                 <h4>Available Balance:</h4>
